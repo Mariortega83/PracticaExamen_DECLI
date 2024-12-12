@@ -1,0 +1,135 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #283593; /* Azul oscuro para el fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Título */
+h1 {
+    color: #FFEB3B; /* Amarillo brillante para el título */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal del juego */
+.game-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    width: 90%;
+    max-width: 1300px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Estilo para los montones */
+.pile {
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #424242; /* Fondo oscuro */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #FFEB3B; /* Borde amarillo brillante */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow-y: auto;
+    transition: all 0.2s ease;
+}
+
+/* Efecto de hover para los montones */
+.pile:hover {
+    background-color: #616161; /* Hover más claro */
+    border-color: #FFEB3B;
+    transform: scale(1.05);
+}
+
+/* Nombre del montón */
+.pile-name {
+    font-size: 16px;
+    color: #FFEB3B; /* Nombre en amarillo brillante */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Estilo para las cartas */
+.card {
+    width: 90%;
+    height: 45px;
+    margin: 5px 0;
+    background-color: #4CAF50; /* Fondo verde para cartas normales */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #388E3C; /* Borde más oscuro de verde */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-transform: capitalize;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Colores específicos para los palos */
+.card.heart, .card.diamond {
+    color: #FF1744; /* Rojo brillante para corazones y diamantes */
+}
+
+.card.club, .card.spade {
+    color: #00C853; /* Verde más claro para tréboles y espadas */
+}
+
+/* Cuando la carta está siendo arrastrada */
+.card:active {
+    cursor: grabbing;
+    opacity: 0.8;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los contenedores de cartas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Botones de reinicio o interacciones */
+button {
+    background-color: #FF7043; /* Naranja brillante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #FF5722; /* Naranja más oscuro para hover */
+}
+
+/* Estilo para las cartas mientras están en estado "arrastre" */
+.card.dragging {
+    opacity: 0.5;
+    z-index: 999;
+}
+
+/* Mejorar los efectos de sombras y transición
